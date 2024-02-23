@@ -1,0 +1,78 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.ReadMe.LSCHax"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="600"
+    d:DesignWidth="1100"
+    Style="{StaticResource UserControlStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="2">
+        <RichTextBox Margin="5,5,2.5,5" Style="{StaticResource RichTextBoxStyle_ReadMe}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    简介
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    一个载具改装编辑器，请把载具开进改车王后再启动本程序
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    项目地址：<Hyperlink NavigateUri="https://www.unknowncheats.me/forum/grand-theft-auto-v/224075-lschax-1-67-external.html" RequestNavigate="Hyperlink_RequestNavigate">https://www.unknowncheats.me/forum/grand-theft-auto-v/224075-lschax-1-67-external.html</Hyperlink>
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    提示
+                </Paragraph>
+                <Paragraph
+                    FontWeight="Bold"
+                    Foreground="#FFF33131"
+                    Style="{StaticResource ParagraphStyle_Content}">
+                    ● 此刷钱方法属于上古产物，不推荐使用
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 通过把NPC使用的普通载具变成复古挽歌出售来赚钱，通常一辆70~80万左右
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 如果卖车提示上限了，需要用GTAHax解除（不推荐，容易进黑名单）
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    更多
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 详细使用教程，请前往小助手官方网站查看&#160;<Hyperlink NavigateUri="https://crazyzhang.cn" RequestNavigate="Hyperlink_RequestNavigate">https://crazyzhang.cn</Hyperlink>
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+        <!--  ////////////////////  -->
+        <RichTextBox Margin="2.5,5,5,5" Style="{StaticResource RichTextBoxStyle_ReadMe}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    说明
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 首先要建个邀请战局（避免有人捣乱），你要有个车库，推荐日蚀大厦，车库里至少有一辆自己的汽车（任意即可），但是车库不能停满，再把输入法调成英文
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 到大街上抢一辆NPC的车（最好是小轿车，要能开进改车王）然后开进附近的改车王
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 进入改车王后等出现改装选项后再打开LSCHax，等LSCHax初始化完毕出现菜单时输入数字7回车，然后切入游戏，进入汽车保险选项会发现载具已经变了颜色，然后切到LSCHax，输入6回车后在输入elegy按回车，再切到游戏等3秒钟购买第一个保险，然后等待被改车王老板踢出
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 把车开到自己车库门口（不能开进去），然后下车走到车库开一辆自己的车出来再回到车库，这时会发现刚才那辆车已经到车库里了，现在开那辆车再去改车王
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 进去后切到辅助输入7回车，切回游戏发现载具外观发生变化，现在去卖掉汽车
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 如果还想继续刷，请重复上述步骤
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+    </UniformGrid>
+
+</UserControl>

@@ -1,0 +1,237 @@
+﻿<UserControl
+    x:Class="GTA5Menu.Views.ExternalMenu.SelfStateView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <StackPanel>
+            <ui:LabelIcon Content="属性调节" />
+            <StackPanel Margin="5,0,5,0">
+                <!--  生命值  -->
+                <ui:SliderIcon
+                    Name="Slider_Health"
+                    Title="生命值"
+                    Maximum="1000"
+                    Minimum="0"
+                    Style="{StaticResource SliderIconStyle_Int}"
+                    ValueChanged="Slider_Health_ValueChanged" />
+                <!--  最大生命值  -->
+                <ui:SliderIcon
+                    Name="Slider_HealthMax"
+                    Title="最大生命值"
+                    Maximum="1000"
+                    Minimum="0"
+                    Style="{StaticResource SliderIconStyle_Int}"
+                    ValueChanged="Slider_HealthMax_ValueChanged" />
+                <!--  护甲值  -->
+                <ui:SliderIcon
+                    Name="Slider_Armor"
+                    Title="护甲值"
+                    Maximum="1000"
+                    Minimum="0"
+                    Style="{StaticResource SliderIconStyle_Int}"
+                    ValueChanged="Slider_Armor_ValueChanged" />
+                <!--  通缉等级  -->
+                <ui:SliderIcon
+                    Name="Slider_WantedLevel"
+                    Title="通缉等级"
+                    Maximum="5"
+                    Minimum="0"
+                    Style="{StaticResource SliderIconStyle_Int}"
+                    ValueChanged="Slider_WantedLevel_ValueChanged" />
+                <!--  潜行速度  -->
+                <ui:SliderIcon
+                    Name="Slider_WalkSpeed"
+                    Title="潜行速度"
+                    Maximum="10"
+                    Minimum="0"
+                    Style="{StaticResource SliderIconStyle_Float}"
+                    ValueChanged="Slider_WalkSpeed_ValueChanged" />
+                <!--  奔跑速度  -->
+                <ui:SliderIcon
+                    Name="Slider_RunSpeed"
+                    Title="奔跑速度"
+                    Maximum="10"
+                    Minimum="0"
+                    Style="{StaticResource SliderIconStyle_Float}"
+                    ValueChanged="Slider_RunSpeed_ValueChanged" />
+                <!--  游泳速度  -->
+                <ui:SliderIcon
+                    Name="Slider_SwimSpeed"
+                    Title="游泳速度"
+                    Maximum="10"
+                    Minimum="0"
+                    Style="{StaticResource SliderIconStyle_Float}"
+                    ValueChanged="Slider_SwimSpeed_ValueChanged" />
+            </StackPanel>
+
+            <ui:LabelIcon Content="一般选项" />
+            <UniformGrid Margin="5,0,5,0" Columns="2">
+                <StackPanel>
+                    <CheckBox
+                        x:Name="CheckBox_PlayerGodMode"
+                        Click="CheckBox_PlayerGodMode_Click"
+                        Content="玩家无敌" />
+                    <CheckBox
+                        x:Name="CheckBox_AntiAFK"
+                        Click="CheckBox_AntiAFK_Click"
+                        Content="挂机防踢" />
+                    <CheckBox
+                        x:Name="CheckBox_NoRagdoll"
+                        Click="CheckBox_NoRagdoll_Click"
+                        Content="无布娃娃" />
+                </StackPanel>
+                <StackPanel>
+                    <CheckBox
+                        x:Name="CheckBox_UndeadOffRadar"
+                        Click="CheckBox_UndeadOffRadar_Click"
+                        Content="雷达影踪（假死）" />
+                    <CheckBox
+                        x:Name="CheckBox_NPCIgnore"
+                        Click="CheckBox_NPCIgnore_Click"
+                        Content="NPC无视" />
+                    <CheckBox
+                        x:Name="CheckBox_PoliceIgnore"
+                        Click="CheckBox_NPCIgnore_Click"
+                        Content="警察无视" />
+                </StackPanel>
+            </UniformGrid>
+        </StackPanel>
+        <!--  面板2  -->
+        <StackPanel>
+            <ui:LabelIcon Content="快捷键" />
+            <StackPanel Margin="5,0,5,0">
+                <CheckBox Content="[F5] 传送到导航点" IsChecked="{Binding SelfStateModel.IsHotKeyToWaypoint, UpdateSourceTrigger=PropertyChanged}" />
+                <CheckBox Content="[F6] 传送到目标点" IsChecked="{Binding SelfStateModel.IsHotKeyToObjective, UpdateSourceTrigger=PropertyChanged}" />
+                <CheckBox Content="[F7] 补满血量和护甲" IsChecked="{Binding SelfStateModel.IsHotKeyFillHealthArmor, UpdateSourceTrigger=PropertyChanged}" />
+                <CheckBox Content="[F8] 消除警星" IsChecked="{Binding SelfStateModel.IsHotKeyClearWanted, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock />
+                <CheckBox Content="[F3] 补满全部武器弹药" IsChecked="{Binding SelfStateModel.IsHotKeyFillAllAmmo, UpdateSourceTrigger=PropertyChanged}" />
+                <CheckBox Content="[F4] 坐标向前微调" IsChecked="{Binding SelfStateModel.IsHotKeyMovingFoward, UpdateSourceTrigger=PropertyChanged}" />
+                <ui:SliderIcon
+                    Name="Slider_MoveDistance"
+                    Title="微调距离"
+                    Maximum="5.0"
+                    Minimum="0.5"
+                    Style="{StaticResource SliderIconStyle_Float}"
+                    TickFrequency="0.5"
+                    ValueChanged="Slider_MoveDistance_ValueChanged"
+                    Value="1.5" />
+
+                <TextBlock />
+                <CheckBox
+                    x:Name="CheckBox_NoCollision"
+                    Click="CheckBox_NoCollision_Click"
+                    Content="[数字0] 玩家无碰撞体积（穿墙）"
+                    IsChecked="{Binding SelfStateModel.IsHotKeyNoCollision, UpdateSourceTrigger=PropertyChanged}" />
+                <CheckBox Content="[数字=+] 传送到准星位置" IsChecked="{Binding SelfStateModel.IsHotKeyToCrossHair, UpdateSourceTrigger=PropertyChanged}" />
+            </StackPanel>
+
+            <ui:LabelIcon Content="常用功能" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_FillHealth"
+                    Click="Button_FillHealth_Click"
+                    Content="补满血量" />
+                <Button
+                    x:Name="Button_FillArmor"
+                    Click="Button_FillArmor_Click"
+                    Content="补满护甲" />
+                <Button
+                    x:Name="Button_ClearWanted"
+                    Click="Button_ClearWanted_Click"
+                    Content="消除警星" />
+                <Button
+                    x:Name="Button_Suicide"
+                    Background="#EA4335"
+                    Click="Button_Suicide_Click"
+                    Content="玩家自杀" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <!--  //////////////  -->
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_ToWaypoint"
+                    Click="Button_ToWaypoint_Click"
+                    Content="传送到导航点" />
+                <Button
+                    x:Name="Button_ToObjective"
+                    Click="Button_ToObjective_Click"
+                    Content="传送到目标点" />
+                <Button
+                    x:Name="Button_ToCrossHair"
+                    Background="#34A853"
+                    Click="Button_ToCrossHair_Click"
+                    Content="传送到准星位置" />
+            </WrapPanel>
+        </StackPanel>
+        <!--  面板3  -->
+        <StackPanel>
+            <ui:LabelIcon Content="实用功能" />
+            <StackPanel Margin="5,0,5,0">
+                <CheckBox
+                    x:Name="CheckBox_AutoClearWanted"
+                    Click="CheckBox_AutoClearWanted_Click"
+                    Content="自动消星" />
+                <CheckBox
+                    x:Name="CheckBox_AutoKillNPC"
+                    Click="CheckBox_AutoKillNPC_Click"
+                    Content="自动击杀NPC" />
+                <CheckBox
+                    x:Name="CheckBox_AutoKillHostilityNPC"
+                    Click="CheckBox_AutoKillHostilityNPC_Click"
+                    Content="自动击杀敌对NPC" />
+                <CheckBox
+                    x:Name="CheckBox_AutoKillPolice"
+                    Click="CheckBox_AutoKillPolice_Click"
+                    Content="自动击杀警察" />
+            </StackPanel>
+
+            <ui:LabelIcon Content="高级" />
+            <StackPanel Margin="5,0,5,0">
+                <CheckBox
+                    x:Name="CheckBox_ProofBullet"
+                    Click="CheckBox_ProofBullet_Click"
+                    Content="防子弹（防止子弹掉血）" />
+                <CheckBox
+                    x:Name="CheckBox_ProofFire"
+                    Click="CheckBox_ProofFire_Click"
+                    Content="防火烧（防止燃烧掉血）" />
+                <CheckBox
+                    x:Name="CheckBox_ProofCollision"
+                    Click="CheckBox_ProofCollision_Click"
+                    Content="防撞击（防止撞击掉血）" />
+                <CheckBox
+                    x:Name="CheckBox_ProofMelee"
+                    Click="CheckBox_ProofMelee_Click"
+                    Content="防近战（防止近战掉血）" />
+                <CheckBox
+                    x:Name="CheckBox_ProofExplosion"
+                    Click="CheckBox_ProofExplosion_Click"
+                    Content="防爆炸（防止爆炸掉血）" />
+                <CheckBox
+                    x:Name="CheckBox_ProofSteam"
+                    Click="CheckBox_ProofSteam_Click"
+                    Content="防蒸汽（具体场景未知）" />
+                <CheckBox
+                    x:Name="CheckBox_ProofDrown"
+                    Click="CheckBox_ProofDrown_Click"
+                    Content="防溺水（具体场景未知）" />
+                <CheckBox
+                    x:Name="CheckBox_ProofWater"
+                    Click="CheckBox_ProofWater_Click"
+                    Content="防海水（可以水下行走）" />
+            </StackPanel>
+        </StackPanel>
+    </UniformGrid>
+
+</UserControl>

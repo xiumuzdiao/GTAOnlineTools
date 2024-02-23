@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>disable</Nullable>
+        <UseWPF>true</UseWPF>
+        <Platforms>x64</Platforms>
+        <PlatformTarget>x64</PlatformTarget>
+        <OutputType>WinExe</OutputType>
+        <StartupObject>GTA5OnlineTools.App</StartupObject>
+        <ApplicationIcon>Assets\Favicon.ico</ApplicationIcon>
+        <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
+        <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+        <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+        <GenerateAssemblyVersionAttribute>false</GenerateAssemblyVersionAttribute>
+        <GenerateAssemblyFileVersionAttribute>false</GenerateAssemblyFileVersionAttribute>
+        <GenerateAssemblyInformationalVersionAttribute>false</GenerateAssemblyInformationalVersionAttribute>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+        <DebugType>full</DebugType>
+    </PropertyGroup>
+
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+        <DebugType>full</DebugType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\GTA5Inject\GTA5Inject.csproj" />
+        <ProjectReference Include="..\GTA5MenuExtra\GTA5MenuExtra.csproj" />
+        <ProjectReference Include="..\GTA5Menu\GTA5Menu.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Downloader" Version="3.0.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Resource Include="Assets\Favicon.ico" />
+        <Resource Include="Assets\Hacks\BincoHax.png" />
+        <Resource Include="Assets\Hacks\GTAHax.png" />
+        <Resource Include="Assets\Hacks\Kiddion.png" />
+        <Resource Include="Assets\Hacks\LSCHax.png" />
+        <Resource Include="Assets\Hacks\YimMenu.png" />
+        <Resource Include="Assets\Hints\StartupMeta.png" />
+        <Resource Include="Assets\Launch.png" />
+    </ItemGroup>
+
+</Project>

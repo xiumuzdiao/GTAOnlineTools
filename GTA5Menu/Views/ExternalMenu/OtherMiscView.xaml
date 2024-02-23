@@ -1,0 +1,42 @@
+﻿<UserControl
+    x:Class="GTA5Menu.Views.ExternalMenu.OtherMiscView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <ListBox
+            x:Name="ListBox_PedModel"
+            Margin="5"
+            DockPanel.Dock="Bottom"
+            MouseDoubleClick="ListBox_PedModel_MouseDoubleClick"
+            Style="{StaticResource ListBoxStyle_Base}" />
+        <!--  面板2  -->
+        <StackPanel>
+            <ui:LabelIcon Content="模型修改" />
+            <StackPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_ModelChange"
+                    Click="Button_ModelChange_Click"
+                    Content="⚠ 修改线上角色模型" />
+                <!--  /////////////  -->
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    1. 此功能仅供尝鲜使用，部分人物模型显示怪异<LineBreak />
+                    2. 如果人物没有刷出来，请多尝试几次<LineBreak />
+                    3. 刷出的人物没有武器，可以拾取地上掉落武器<LineBreak />
+                    4. 人物死亡复活后会变透明，重新刷人物即可<LineBreak />
+                    5. 如果要恢复线上角色，请切换战局或者回到故事模式然后重新进入线上</TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <!--  面板3  -->
+        <StackPanel />
+    </UniformGrid>
+
+</UserControl>

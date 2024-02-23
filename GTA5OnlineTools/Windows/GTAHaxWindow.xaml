@@ -1,0 +1,78 @@
+﻿<ui:Window
+    x:Class="GTA5OnlineTools.Windows.GTAHaxWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    x:Name="Window_GTAHax"
+    Title="GTA5线上小助手 - GTAHax预设代码"
+    Width="900"
+    Height="550"
+    Closing="Window_GTAHax_Closing"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    Loaded="Window_GTAHax_Loaded"
+    ResizeMode="CanMinimize"
+    Style="{StaticResource SystemWindowStyle}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <ui:Window.TitleContent>
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+            <Image
+                Height="20"
+                Margin="5"
+                Source="/Assets/Favicon.ico"
+                Style="{StaticResource ImageStyle_HighQuality}" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="{Binding ElementName=Window_GTAHax, Path=Title}" />
+        </StackPanel>
+    </ui:Window.TitleContent>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="260" />
+        </Grid.ColumnDefinitions>
+        <!--  ///////////  -->
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Margin="5"
+            Orientation="Horizontal">
+            <Button
+                x:Name="Button_ImportGTAHax"
+                Click="Button_ImportGTAHax_Click"
+                Content="导入GTAHax并执行" />
+            <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                提示：如果代码执行成功，游戏中会出现《大受好评》的奖章，并给予少于经验值
+            </TextBlock>
+        </StackPanel>
+        <!--  ///////////  -->
+        <ListBox
+            x:Name="ListBox_GTAHaxClass"
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="5,0,5,5"
+            SelectionChanged="ListBox_GTAHaxClass_SelectionChanged"
+            Style="{StaticResource ListBoxStyle_Base}" />
+        <!--  ///////////  -->
+        <TextBox
+            x:Name="TextBox_PreviewGTAHax"
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="0,0,5,5"
+            AcceptsReturn="True"
+            IsReadOnly="False"
+            Style="{StaticResource TextBoxStyle_Logger}" />
+    </Grid>
+
+</ui:Window>

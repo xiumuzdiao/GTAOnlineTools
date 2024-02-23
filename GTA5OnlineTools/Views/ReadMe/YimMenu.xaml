@@ -1,0 +1,91 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.ReadMe.YimMenu"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="600"
+    d:DesignWidth="1100"
+    Style="{StaticResource UserControlStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="2">
+        <RichTextBox Margin="5,5,2.5,5" Style="{StaticResource RichTextBoxStyle_ReadMe}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    简介
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    一款GitHub开源项目Yimura大佬制作的免费GTA5注入式菜单，旨在防止大范围的公共崩溃和改善整体体验
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    项目地址：<Hyperlink NavigateUri="https://github.com/YimMenu/YimMenu" RequestNavigate="Hyperlink_RequestNavigate">https://github.com/YimMenu/YimMenu</Hyperlink>
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    配置文件
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    默认配置文件路径：C:\Users\用户名\AppData\Roaming\YimMenu
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    如果你不小心修改了某些设置导致Yim无法正常使用，请先卸载注入，到这个文件夹清理里面内容，然后重新注入Yim即可恢复默认设置
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    注意事项
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    现版本YimMenu文件使用了游戏缓存来获取载具、武器、Ped等数据，这个是导致崩溃的主要原因
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    YimMenu建议在线上模式注入，推荐邀请战局（因为他需要读取Social Club相关信息，如果读取不到就可能会导致崩溃）
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    小助手汉化版本YimMenu默认关闭全部功能，YimMenu官方英文版本会默认开启部分功能，如果两则都使用，注意配置文件冲突
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    崩溃问题
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    如果注入后立刻就崩溃，这一般是缓存导致的，请重启游戏，并清空YimMenu配置文件（就是那个YimMenu文件夹），然后进入邀请战局（不建议去公共战局，故事模式也可以），这时再注入YimMenu，然后按照提示在线上模式更新游戏缓存即可
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    如果更新缓存会导致崩溃游戏，可以使用预设GTA缓存功能（这是释放不会崩溃的GTA缓存文件），然后再进入游戏就不需要更新缓存了
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    更多
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    ● 详细使用教程，请前往小助手官方网站查看&#160;<Hyperlink NavigateUri="https://crazyzhang.cn" RequestNavigate="Hyperlink_RequestNavigate">https://crazyzhang.cn</Hyperlink>
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+        <!--  ////////////////////  -->
+        <RichTextBox Margin="2.5,5,5,5" Style="{StaticResource RichTextBoxStyle_ReadMe}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    按钮
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    注入成功了，按Insert键（就是Home键左边的那个）显示/隐藏菜单，使用鼠标操作
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    如果鼠标卡在屏幕中心不动，请在游戏中按ESC-》设置-》键盘/鼠标-》鼠标输入方法，改成原始输入即可
+                </Paragraph>
+
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    提示
+                </Paragraph>
+                <Paragraph Style="{StaticResource ParagraphStyle_Content}">
+                    注入成功后，会出现一个YimMenu的控制台窗口，这个不要关闭，否则游戏会跟着一起关闭，如果要卸载注入，点击菜单左上角的卸载按钮即可
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+    </UniformGrid>
+
+</UserControl>

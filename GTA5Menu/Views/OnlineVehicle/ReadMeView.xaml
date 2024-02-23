@@ -1,0 +1,51 @@
+﻿<UserControl
+    x:Class="GTA5Menu.Views.OnlineVehicle.ReadMeView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="2">
+        <RichTextBox Style="{StaticResource RichTextBoxStyle_ReadMe}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    刷车说明
+                </Paragraph>
+                <Paragraph>
+                    ● 如果载具刷不出来，请多点几次，或者换一个宽敞的地方重新刷车
+                </Paragraph>
+                <Paragraph>
+                    ● 牙膏车刷了会消失，如果想不让他消失，请点击《提前解锁1.67牙膏车》按钮
+                </Paragraph>
+                <Paragraph>
+                    ● 鼠标悬浮在载具卡片上，会显示载具的完整名称
+                </Paragraph>
+                <Paragraph>
+                    ● 在载具卡片上双击鼠标左键，可以直接刷出选中的载具
+                </Paragraph>
+                <Paragraph>
+                    ● 《我的收藏》页面，在载具卡片上按住鼠标左键可以拖拽排序
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+
+        <RichTextBox Style="{StaticResource RichTextBoxStyle_ReadMe}">
+            <FlowDocument>
+                <Paragraph Style="{StaticResource ParagraphStyle_Title}">
+                    功能说明
+                </Paragraph>
+                <Paragraph Foreground="Red">
+                    ● 刷出的载具只能当作临时载具使用，不可出售或者保存为个人载具，否则可能会有风险
+                </Paragraph>
+
+            </FlowDocument>
+        </RichTextBox>
+    </UniformGrid>
+
+</UserControl>

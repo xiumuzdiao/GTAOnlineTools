@@ -1,0 +1,64 @@
+﻿<ui:Window
+    x:Class="GTA5OnlineTools.Windows.KiddionWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    x:Name="Window_Kiddion"
+    Title="GTA5线上小助手 - Kiddion汉化润色修正"
+    Width="500"
+    Height="500"
+    Closing="Window_Kiddion_Closing"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    Loaded="Window_Kiddion_Loaded"
+    ResizeMode="CanMinimize"
+    Style="{StaticResource SystemWindowStyle}"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+
+    <ui:Window.TitleContent>
+        <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+            <Image
+                Height="20"
+                Margin="5"
+                Source="/Assets/Favicon.ico"
+                Style="{StaticResource ImageStyle_HighQuality}" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontSize="14"
+                FontWeight="Bold"
+                Text="{Binding ElementName=Window_Kiddion, Path=Title}" />
+        </StackPanel>
+    </ui:Window.TitleContent>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <!--  ///////////////////////  -->
+        <WrapPanel Margin="5,5,5,0" Orientation="Horizontal">
+            <Button
+                x:Name="Button_GetKiddionUI"
+                Click="Button_GetKiddionUI_Click"
+                Content="获取Kiddion文本" />
+
+            <TextBlock Margin="5" VerticalAlignment="Center">
+                <Hyperlink NavigateUri="https://github.com/CrazyZhang666/GTA5OnlineTools/discussions/new?category=general" RequestNavigate="Hyperlink_RequestNavigate">
+                    汉化请反馈到GitHub
+                </Hyperlink>
+            </TextBlock>
+        </WrapPanel>
+        <!--  ///////////////////////  -->
+        <TextBox
+            x:Name="TextBox_Logger"
+            Grid.Row="1"
+            Margin="5"
+            FontFamily="Consolas"
+            FontSize="16"
+            IsReadOnly="False"
+            Style="{StaticResource TextBoxStyle_Logger}" />
+    </Grid>
+
+</ui:Window>

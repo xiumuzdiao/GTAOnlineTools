@@ -1,0 +1,210 @@
+﻿<UserControl
+    x:Class="GTA5Menu.Views.ExternalMenu.OnlineOptionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <StackPanel>
+            <ui:LabelIcon Content="战局切换" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Sessions_Click" Content="公共战局" />
+                <Button Click="Button_Sessions_Click" Content="仅限邀请战局" />
+                <Button Click="Button_Sessions_Click" Content="帮会战局" />
+                <Button Click="Button_Sessions_Click" Content="私人帮会战局" />
+                <Button Click="Button_Sessions_Click" Content="私人好友战局" />
+                <Button Click="Button_Sessions_Click" Content="单人战局" />
+                <Button Click="Button_Sessions_Click" Content="加入好友" />
+                <Button Click="Button_Sessions_Click" Content="加入帮会伙伴" />
+                <Button Click="Button_Sessions_Click" Content="创建公共战局" />
+                <Button Click="Button_Sessions_Click" Content="离开线上模式" />
+            </WrapPanel>
+
+            <ui:LabelIcon Content="特殊功能" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_EmptySession"
+                    Click="Button_EmptySession_Click"
+                    Content="空战局" />
+                <Button
+                    x:Name="Button_Disconnect"
+                    Click="Button_Disconnect_Click"
+                    Content="断开战局连接" />
+                <Button
+                    x:Name="Button_StopCutscene"
+                    Click="Button_StopCutscene_Click"
+                    Content="跳过过场动画" />
+            </WrapPanel>
+            <StackPanel Margin="5,0,5,0">
+                <CheckBox
+                    x:Name="CheckBox_FreeChangeAppearance"
+                    Click="CheckBox_FreeChangeAppearance_Click"
+                    Content="免费更改角色外观" />
+                <CheckBox
+                    x:Name="CheckBox_ChangeAppearanceCooldown"
+                    Click="CheckBox_ChangeAppearanceCooldown_Click"
+                    Content="移除更改角色外观冷却" />
+            </StackPanel>
+
+            <ui:LabelIcon Content="高级" />
+            <UniformGrid Margin="5,0,5,0" Columns="2">
+                <StackPanel>
+                    <CheckBox
+                        x:Name="CheckBox_PassiveModeCooldown"
+                        Click="CheckBox_PassiveModeCooldown_Click"
+                        Content="移除被动模式冷却" />
+                    <CheckBox
+                        x:Name="CheckBox_SuicideCooldown"
+                        Click="CheckBox_SuicideCooldown_Click"
+                        Content="移除自杀冷却" />
+                    <CheckBox
+                        x:Name="CheckBox_OrbitalCooldown"
+                        Click="CheckBox_OrbitalCooldown_Click"
+                        Content="移除天基炮冷却" />
+                    <CheckBox
+                        x:Name="CheckBox_SellOnNonPublic"
+                        Click="CheckBox_SellOnNonPublic_Click"
+                        Content="非公开战局运货" />
+                    <CheckBox
+                        x:Name="CheckBox_SessionSnow"
+                        Click="CheckBox_SessionSnow_Click"
+                        Content="战局雪天 (自己可见)" />
+                </StackPanel>
+                <StackPanel>
+                    <CheckBox
+                        x:Name="CheckBox_OffRadar"
+                        Click="CheckBox_OffRadar_Click"
+                        Content="雷达影踪" />
+                    <CheckBox
+                        x:Name="CheckBox_GhostOrganization"
+                        Click="CheckBox_GhostOrganization_Click"
+                        Content="幽灵组织" />
+                    <CheckBox
+                        x:Name="CheckBox_BribeOrBlindCops"
+                        Click="CheckBox_BribeOrBlindCops_Click"
+                        Content="警察无视犯罪" />
+                    <CheckBox
+                        x:Name="CheckBox_BribeAuthorities"
+                        Click="CheckBox_BribeAuthorities_Click"
+                        Content="贿赂当局" />
+                    <CheckBox
+                        x:Name="CheckBox_RevealPlayers"
+                        Click="CheckBox_RevealPlayers_Click"
+                        Content="显示玩家" />
+                </StackPanel>
+            </UniformGrid>
+        </StackPanel>
+        <!--  面板2  -->
+        <StackPanel>
+            <ui:LabelIcon Content="线上资产传送" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Blips_Click" Content="办公室" />
+                <Button Click="Button_Blips_Click" Content="特种货物仓库" />
+                <Button Click="Button_Blips_Click" Content="载具仓库" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Blips_Click" Content="摩托帮会所" />
+                <Button Click="Button_Blips_Click" Content="可卡因作坊" />
+                <Button Click="Button_Blips_Click" Content="冰毒实验室" />
+                <Button Click="Button_Blips_Click" Content="大麻种植场" />
+                <Button Click="Button_Blips_Click" Content="假钞工厂" />
+                <Button Click="Button_Blips_Click" Content="证件伪造办公室" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Blips_Click" Content="地堡" />
+                <Button Click="Button_Blips_Click" Content="机库" />
+                <Button Click="Button_Blips_Click" Content="设施" />
+                <Button Click="Button_Blips_Click" Content="夜总会" />
+                <Button Click="Button_Blips_Click" Content="游戏厅" />
+                <Button Click="Button_Blips_Click" Content="改装铺" />
+                <Button Click="Button_Blips_Click" Content="事务所" />
+                <Button Click="Button_Blips_Click" Content="竞技场工作室" />
+                <Button Click="Button_Blips_Click" Content="怪胎店" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Blips_Click" Content="赌场" />
+                <Button Click="Button_Blips_Click" Content="洛圣都车友会" />
+                <Button Click="Button_Blips_Click" Content="豪华汽车" />
+                <Button Click="Button_Blips_Click" Content="顶级豪华车业" />
+                <Button Click="Button_Blips_Click" Content="好麦坞车友俱乐部" />
+                <Button Click="Button_Blips_Click" Content="录音A工作室" />
+                <Button Click="Button_Blips_Click" Content="枪支厢型车" />
+                <Button Click="Button_Blips_Click" Content="街头毒贩" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Blips_Click" Content="游艇" />
+                <Button Click="Button_Blips_Click" Content="虎鲸" />
+                <Button Click="Button_Blips_Click" Content="恐霸" />
+                <Button Click="Button_Blips_Click" Content="复仇者" />
+                <Button Click="Button_Blips_Click" Content="机动作战中心" />
+                <Button Click="Button_Blips_Click" Content="致幻剂实验室" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_Blips_Click" Content="藏匿屋" />
+                <Button Click="Button_Blips_Click" Content="杰拉德包裹" />
+                <Button Click="Button_Blips_Click" Content="隐藏包裹" />
+            </WrapPanel>
+        </StackPanel>
+        <!--  面板3  -->
+        <StackPanel>
+            <ui:LabelIcon Content="梅利威瑟" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_MerryweatherServices_Click" Content="请求弹药空投" />
+                <Button Click="Button_MerryweatherServices_Click" Content="请求重型防弹装甲" />
+                <Button Click="Button_MerryweatherServices_Click" Content="请求牛鲨睾酮" />
+                <Button Click="Button_MerryweatherServices_Click" Content="请求船只接送" />
+                <Button Click="Button_MerryweatherServices_Click" Content="请求直升机接送" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <!--  //////////////  -->
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_InstantBullShark"
+                    Click="Button_InstantBullShark_Click"
+                    Content="使用牛鲨睾酮" />
+                <Button
+                    x:Name="Button_RemoveBullShark"
+                    Click="Button_RemoveBullShark_Click"
+                    Content="移除牛鲨睾酮效果" />
+                <Button
+                    x:Name="Button_BackupHeli"
+                    Click="Button_BackupHeli_Click"
+                    Content="呼叫支援直升机" />
+                <Button
+                    x:Name="Button_Airstrike"
+                    Click="Button_Airstrike_Click"
+                    Content="呼叫空袭" />
+                <TextBlock />
+            </WrapPanel>
+            <!--  ////////////////  -->
+            <ui:LabelIcon Content="特殊载具" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_RequestKosatka"
+                    Click="Button_RequestKosatka_Click"
+                    Content="请求虎鲸" />
+                <Button
+                    x:Name="Button_TriggerRCBandito"
+                    Click="Button_TriggerRCBandito_Click"
+                    Content="进入RC匪徒" />
+                <Button
+                    x:Name="Button_TriggerMiniTank"
+                    Click="Button_TriggerMiniTank_Click"
+                    Content="进入迷你坦克" />
+            </WrapPanel>
+        </StackPanel>
+    </UniformGrid>
+
+</UserControl>

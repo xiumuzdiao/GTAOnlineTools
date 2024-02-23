@@ -1,0 +1,93 @@
+﻿<UserControl
+    x:Class="GTA5Menu.Views.OnlineTeleport.TeleportOptionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:dd="urn:gong-wpf-dragdrop"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <StackPanel>
+            <ui:LabelIcon Content="快捷传送" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_ToWaypoint"
+                    Click="Button_ToWaypoint_Click"
+                    Content="传送到导航点" />
+                <Button
+                    x:Name="Button_ToObjective"
+                    Click="Button_ToObjective_Click"
+                    Content="传送到目标点" />
+            </WrapPanel>
+            <!--  //////////////////////////  -->
+            <ui:LabelIcon Content="坐标微调" />
+            <StackPanel Margin="5,0,5,0">
+                <DockPanel>
+                    <TextBlock
+                        Margin="5"
+                        DockPanel.Dock="Left"
+                        Text="{Binding ElementName=Slider_MoveDistance, Path=Value, StringFormat=微调距离 : {0:0.0}}" />
+                    <Slider
+                        Name="Slider_MoveDistance"
+                        VerticalAlignment="Center"
+                        DockPanel.Dock="Right"
+                        Maximum="5.0"
+                        Minimum="0.5"
+                        TickFrequency="0.5"
+                        Value="1.5" />
+                </DockPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="0.5*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Click="Button_MoveDistance_Click"
+                            Content="向前" />
+                        <Button
+                            Grid.Row="2"
+                            Grid.Column="1"
+                            Click="Button_MoveDistance_Click"
+                            Content="向后" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Click="Button_MoveDistance_Click"
+                            Content="向左" />
+                        <Button
+                            Grid.Row="1"
+                            Grid.Column="2"
+                            Click="Button_MoveDistance_Click"
+                            Content="向右" />
+                    </Grid>
+                    <StackPanel
+                        Grid.Column="1"
+                        Margin="5"
+                        VerticalAlignment="Center">
+                        <Button Click="Button_MoveDistance_Click" Content="向上" />
+                        <Button Click="Button_MoveDistance_Click" Content="向下" />
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </StackPanel>
+    </UniformGrid>
+
+</UserControl>

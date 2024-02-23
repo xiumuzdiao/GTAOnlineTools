@@ -1,0 +1,95 @@
+﻿<UserControl
+    x:Class="GTA5OnlineTools.Views.GTA5View"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="620"
+    d:DesignWidth="1100"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    Style="{StaticResource UserControlStyle_Loaded}"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <WrapPanel>
+            <ui:ButtonIcon
+                Title="小助手外置菜单"
+                Command="{Binding GTA5ViewClickCommand}"
+                CommandParameter="ExternalMenu"
+                Description="无敌、消星、补子弹、多功能传送、移除CD、刷载具、刷武器、战局聊天、ESP等众多实用功能 "
+                Icon="&#xe666;"
+                Star="&#xe634;&#xe634;&#xe634;&#xe634;&#xe634;"
+                Style="{StaticResource ButtonStyle_GTA5Module}" />
+            <!--  ///////////////////  -->
+            <ui:ButtonIcon
+                Title="抢劫任务编辑器"
+                Command="{Binding GTA5ViewClickCommand}"
+                CommandParameter="HeistsEditor"
+                Description="跳过公寓、末日、赌场、海岛、合约抢劫前置任务，修改分红数据"
+                Icon="&#xe6b5;"
+                Star="&#xe634;&#xe634;&#xe634;&#xe634;&#xe634;"
+                Style="{StaticResource ButtonStyle_GTA5Module}" />
+            <!--  ///////////////////  -->
+            <ui:ButtonIcon
+                Title="STAT编辑器"
+                Command="{Binding GTA5ViewClickCommand}"
+                CommandParameter="StatsEditor"
+                Description="预设一部分常用STAT代码，可补满零食护甲、修改等级、重新捏脸、跳过前置、解锁物品等功能"
+                Icon="&#xe67a;"
+                Star="&#xe634;&#xe634;&#xe634;&#xe634;&#xe62e;"
+                Style="{StaticResource ButtonStyle_GTA5Module}" />
+            <!--  ///////////////////  -->
+            <ui:ButtonIcon
+                Title="角色服装编辑器"
+                Command="{Binding GTA5ViewClickCommand}"
+                CommandParameter="OutfitsEditor"
+                Description="自定义玩家已保存的服装，可以获取一些特殊服装和配件，具体功能可参考BincoHax"
+                Icon="&#xe8c7;"
+                Star="&#xe634;&#xe634;&#xe634;&#xe634;&#xe62e;"
+                Style="{StaticResource ButtonStyle_GTA5Module}" />
+            <!--  ///////////////////  -->
+            <ui:ButtonIcon
+                Title="赌场黑客"
+                Command="{Binding GTA5ViewClickCommand}"
+                CommandParameter="CasinoHack"
+                Description="自定义幸运转盘奖品，获取展台车，可控制老虎机奖励倍数"
+                Icon="&#xe66f;"
+                Star="&#xe634;&#xe634;&#xe634;&#xe634;&#xe62e;"
+                Style="{StaticResource ButtonStyle_GTA5Module}" />
+            <!--  ///////////////////  -->
+            <ui:ButtonIcon
+                Title="车速表"
+                Command="{Binding GTA5ViewClickCommand}"
+                CommandParameter="SpeedMeter"
+                Description="玩家驾驶载具时显示一个速度表图形，可以显示当前载具速度和档位"
+                Icon="&#xeab4;"
+                Star="&#xe634;&#xe634;&#xe634;&#xe634;&#xe62e;"
+                Style="{StaticResource ButtonStyle_GTA5Module}" />
+        </WrapPanel>
+        <!--  ///////////////////  -->
+        <Separator Margin="8,13,8,5" Background="#EAEAEA" />
+        <!--  ///////////////////  -->
+        <WrapPanel>
+            <ui:ButtonIcon
+                Title="Kiddion汉化润色修正"
+                Command="{Binding GTA5FuncClickCommand}"
+                CommandParameter="KiddionChs"
+                Icon="&#xe61c;"
+                Style="{StaticResource ButtonStyle_GTA5Func}" />
+            <ui:ButtonIcon
+                Title="生成带密码战局文件"
+                Command="{Binding GTA5FuncClickCommand}"
+                CommandParameter="StartupMeta"
+                Icon="&#xe64c;"
+                Style="{StaticResource ButtonStyle_GTA5Func}" />
+            <ui:ButtonIcon
+                Title="替换故事模式完美存档"
+                Command="{Binding GTA5FuncClickCommand}"
+                CommandParameter="StoryProfiles"
+                Icon="&#xe602;"
+                Style="{StaticResource ButtonStyle_GTA5Func}" />
+        </WrapPanel>
+    </StackPanel>
+
+</UserControl>

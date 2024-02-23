@@ -1,0 +1,68 @@
+﻿<UserControl
+    x:Class="GTA5Menu.Views.OnlineVehicle.VehicleOptionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <StackPanel>
+            <ui:LabelIcon Content="一般选项" />
+            <StackPanel>
+                <WrapPanel Margin="5,0,5,0">
+                    <CheckBox
+                        x:Name="CheckBox_VehicleGodMode"
+                        Click="CheckBox_VehicleGodMode_Click"
+                        Content="载具无敌" />
+                    <CheckBox
+                        x:Name="CheckBox_VehicleSeatbelt"
+                        Click="CheckBox_VehicleSeatbelt_Click"
+                        Content="载具安全带" />
+                    <CheckBox
+                        x:Name="CheckBox_VehicleParachute"
+                        Click="CheckBox_VehicleParachute_Click"
+                        Content="载具降落伞" />
+                </WrapPanel>
+                <WrapPanel Margin="5,0,5,0">
+                    <Button
+                        x:Name="Button_FillVehicleHealth"
+                        Click="Button_FillVehicleHealth_Click"
+                        Content="补满血量" />
+                    <Button
+                        x:Name="Button_RepairVehicle"
+                        Click="Button_RepairVehicle_Click"
+                        Content="修复外观" />
+                    <Button
+                        x:Name="Button_RemoveBullShark"
+                        Click="Button_RemoveBullShark_Click"
+                        Content="移除牛鲨睾酮效果" />
+                </WrapPanel>
+            </StackPanel>
+            <!--  ////////////////  -->
+            <ui:LabelIcon Content="载具解锁" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_Unlock167Vehicle"
+                    Click="Button_Unlock167Vehicle_Click"
+                    Content="提前解锁1.67新载具" />
+            </WrapPanel>
+        </StackPanel>
+        <!--  面板2  -->
+        <DockPanel>
+            <ui:LabelIcon Content="附加功能" DockPanel.Dock="Top" />
+            <ListBox
+                x:Name="ListBox_VehicleExtras"
+                Margin="5"
+                MouseDoubleClick="ListBox_VehicleExtras_MouseDoubleClick"
+                SelectionChanged="ListBox_VehicleExtras_SelectionChanged"
+                Style="{StaticResource ListBoxStyle_Base}" />
+        </DockPanel>
+    </UniformGrid>
+
+</UserControl>

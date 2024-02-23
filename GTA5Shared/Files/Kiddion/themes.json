@@ -1,0 +1,30 @@
+{
+  "CustomThemes": [
+    {
+      "Name": "黑白相间",
+      "FontName": "Microsoft YaHei",
+      "ItemColor": "000000",
+      "TextColor": "FFFFFF",
+      "SelectedItemColor": "FFFFFF",
+      "SelectedTextColor": "000000",
+      "BackgroundColor": "000000",
+      "TransparencyColorKey": "001337",
+      "ItemHeight": 20,
+      "ItemWidth": 350,
+      "ItemSpacing": 3
+    },
+    {
+      "Name": "黑白相间（蓝色）",
+      "FontName": "Microsoft YaHei",
+      "ItemColor": "000000",
+      "TextColor": "FFFFFF",
+      "SelectedItemColor": "255A97",
+      "SelectedTextColor": "FFFFFF",
+      "BackgroundColor": "000000",
+      "TransparencyColorKey": "001337",
+      "ItemHeight": 20,
+      "ItemWidth": 350,
+      "ItemSpacing": 3
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+﻿<UserControl
+    x:Class="GTA5Menu.Views.ExternalMenu.ExternalOverlayView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <StackPanel>
+            <ui:LabelIcon Content="ESP选项" />
+            <UniformGrid Margin="5,0,5,0" Columns="2">
+                <StackPanel>
+                    <CheckBox
+                        x:Name="CheckBox_ESP_Player"
+                        Click="CheckBox_ESP_Player_Click"
+                        Content="显示玩家"
+                        IsChecked="True" />
+                    <Border
+                        Margin="5"
+                        Padding="5"
+                        BorderBrush="#C2C3C9"
+                        BorderThickness="1">
+                        <StackPanel>
+                            <WrapPanel>
+                                <RadioButton
+                                    x:Name="RadioButton_ESP_Player_2D"
+                                    Click="RadioButton_ESP_Player_2D_Click"
+                                    Content="2D"
+                                    GroupName="ESP_Player_Box"
+                                    IsChecked="True"
+                                    IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                                <RadioButton
+                                    x:Name="RadioButton_ESP_Player_3D"
+                                    Click="RadioButton_ESP_Player_3D_Click"
+                                    Content="3D"
+                                    GroupName="ESP_Player_Box"
+                                    IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                            </WrapPanel>
+                            <CheckBox
+                                x:Name="CheckBox_ESP_Player_Box"
+                                Click="CheckBox_ESP_Player_Box_Click"
+                                Content="显示方框"
+                                IsChecked="True"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_Player_Line"
+                                Click="CheckBox_ESP_Player_Line_Click"
+                                Content="显示射线"
+                                IsChecked="True"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_Player_Bone"
+                                Click="CheckBox_ESP_Player_Bone_Click"
+                                Content="显示骨骼 #"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_Player_HealthBar"
+                                Click="CheckBox_ESP_Player_HealthBar_Click"
+                                Content="显示血条"
+                                IsChecked="True"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_Player_HealthText"
+                                Click="CheckBox_ESP_Player_HealthText_Click"
+                                Content="显示数字血量 #"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_Player_NameText"
+                                Click="CheckBox_ESP_Player_NameText_Click"
+                                Content="显示玩家信息 #"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_AimBot_Player_Enabled"
+                                Click="CheckBox_AimBot_Player_Enabled_Click"
+                                Content="开启Aimbot"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Player, Path=IsChecked}" />
+                        </StackPanel>
+                    </Border>
+                    <!--  ////////////////  -->
+                    <CheckBox
+                        x:Name="CheckBox_ESP_Pickup"
+                        Click="CheckBox_ESP_Pickup_Click"
+                        Content="显示掉落物品"
+                        IsChecked="True" />
+                    <Border
+                        Margin="5"
+                        Padding="5"
+                        BorderBrush="#C2C3C9"
+                        BorderThickness="1">
+                        <StackPanel>
+                            <WrapPanel>
+                                <RadioButton
+                                    x:Name="RadioButton_ESP_Pickup_2D"
+                                    Click="RadioButton_ESP_Pickup_2D_Click"
+                                    Content="2D"
+                                    GroupName="ESP_Pickup_Box"
+                                    IsChecked="True"
+                                    IsEnabled="{Binding ElementName=CheckBox_ESP_Pickup, Path=IsChecked}" />
+                                <RadioButton
+                                    x:Name="RadioButton_ESP_Pickup_3D"
+                                    Click="RadioButton_ESP_Pickup_3D_Click"
+                                    Content="3D"
+                                    GroupName="ESP_Pickup_Box"
+                                    IsEnabled="{Binding ElementName=CheckBox_ESP_Pickup, Path=IsChecked}" />
+                            </WrapPanel>
+                            <CheckBox
+                                x:Name="CheckBox_ESP_Pickup_Box"
+                                Click="CheckBox_ESP_Pickup_Box_Click"
+                                Content="显示方框"
+                                IsChecked="True"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Pickup, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_Pickup_Line"
+                                Click="CheckBox_ESP_Pickup_Line_Click"
+                                Content="显示射线"
+                                IsChecked="True"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_Pickup, Path=IsChecked}" />
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+                <!--  ////////////////  -->
+                <StackPanel>
+                    <CheckBox
+                        x:Name="CheckBox_ESP_NPC"
+                        Click="CheckBox_ESP_NPC_Click"
+                        Content="显示NPC"
+                        IsChecked="True" />
+                    <Border
+                        Margin="5"
+                        Padding="5"
+                        BorderBrush="#C2C3C9"
+                        BorderThickness="1">
+                        <StackPanel>
+                            <WrapPanel>
+                                <RadioButton
+                                    x:Name="RadioButton_ESP_NPC_2D"
+                                    Click="RadioButton_ESP_NPC_2D_Click"
+                                    Content="2D"
+                                    GroupName="ESP_NPC_Box"
+                                    IsChecked="True"
+                                    IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                                <RadioButton
+                                    x:Name="RadioButton_ESP_NPC_3D"
+                                    Click="RadioButton_ESP_NPC_3D_Click"
+                                    Content="3D"
+                                    GroupName="ESP_NPC_Box"
+                                    IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                            </WrapPanel>
+                            <CheckBox
+                                x:Name="CheckBox_ESP_NPC_Box"
+                                Click="CheckBox_ESP_NPC_Box_Click"
+                                Content="显示方框"
+                                IsChecked="True"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_NPC_Line"
+                                Click="CheckBox_ESP_NPC_Line_Click"
+                                Content="显示射线"
+                                IsChecked="True"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_NPC_Bone"
+                                Click="CheckBox_ESP_NPC_Bone_Click"
+                                Content="显示骨骼 #"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_NPC_HealthBar"
+                                Click="CheckBox_ESP_NPC_HealthBar_Click"
+                                Content="显示血条"
+                                IsChecked="True"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_NPC_HealthText"
+                                Click="CheckBox_ESP_NPC_HealthText_Click"
+                                Content="显示数字血量 #"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_ESP_NPC_NameText"
+                                Click="CheckBox_ESP_NPC_NameText_Click"
+                                Content="显示NPC信息 #"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                            <CheckBox
+                                x:Name="CheckBox_AimBot_NPC_Enabled"
+                                Click="CheckBox_AimBot_NPC_Enabled_Click"
+                                Content="开启Aimbot"
+                                IsEnabled="{Binding ElementName=CheckBox_ESP_NPC, Path=IsChecked}" />
+                        </StackPanel>
+                    </Border>
+                    <!--  ////////////////  -->
+                    <CheckBox
+                        x:Name="CheckBox_ESP_Crosshair"
+                        Click="CheckBox_ESP_Crosshair_Click"
+                        Content="显示准心"
+                        IsChecked="True" />
+                    <CheckBox
+                        x:Name="CheckBox_ESP_InfoText"
+                        Click="CheckBox_ESP_InfoText_Click"
+                        Content="显示绘制信息"
+                        IsChecked="True" />
+                    <CheckBox
+                        x:Name="CheckBox_NoTopMostHide"
+                        Click="CheckBox_NoTopMostHide_Click"
+                        Content="非游戏状态隐藏" />
+                </StackPanel>
+            </UniformGrid>
+        </StackPanel>
+        <!--  面板2  -->
+        <StackPanel>
+            <ui:LabelIcon Content="AimBot位置" />
+            <WrapPanel Margin="5,0,5,0">
+                <RadioButton
+                    x:Name="RadioButton_AimBot_BoneIndex_0"
+                    Click="RadioButton_AimBot_BoneIndex_Click"
+                    Content="头部"
+                    IsChecked="True" />
+                <RadioButton
+                    x:Name="RadioButton_AimBot_BoneIndex_7"
+                    Click="RadioButton_AimBot_BoneIndex_Click"
+                    Content="颈部" />
+                <RadioButton
+                    x:Name="RadioButton_AimBot_BoneIndex_8"
+                    Click="RadioButton_AimBot_BoneIndex_Click"
+                    Content="腹部" />
+            </WrapPanel>
+            <!--  //////////////  -->
+            <ui:LabelIcon Content="Aimbot按键" />
+            <WrapPanel Margin="5,0,5,0">
+                <RadioButton
+                    x:Name="RadioButton_AimbotKey_Control"
+                    Click="RadioButton_AimbotKey_Click"
+                    Content="左Ctrl键"
+                    IsChecked="True" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotKey_ShiftKey"
+                    Click="RadioButton_AimbotKey_Click"
+                    Content="左Shift键" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotKey_LButton"
+                    Click="RadioButton_AimbotKey_Click"
+                    Content="鼠标左键" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotKey_RButton"
+                    Click="RadioButton_AimbotKey_Click"
+                    Content="鼠标右键" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotKey_XButton1"
+                    Click="RadioButton_AimbotKey_Click"
+                    Content="鼠标侧键1" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotKey_XButton2"
+                    Click="RadioButton_AimbotKey_Click"
+                    Content="鼠标侧键2" />
+            </WrapPanel>
+            <!--  //////////////  -->
+            <ui:LabelIcon Content="Aimbot范围" />
+            <WrapPanel Margin="5,0,5,0">
+                <RadioButton
+                    x:Name="RadioButton_Crosshair_NearBy"
+                    Click="RadioButton_AimbotFov_Height_Click"
+                    Content="准星附近"
+                    IsChecked="True" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotFov_14Height"
+                    Click="RadioButton_AimbotFov_Height_Click"
+                    Content="1/4屏幕高度" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotFov_12Height"
+                    Click="RadioButton_AimbotFov_Height_Click"
+                    Content="1/2屏幕高度" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotFov_Height"
+                    Click="RadioButton_AimbotFov_Height_Click"
+                    Content="屏幕高度" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotFov_Width"
+                    Click="RadioButton_AimbotFov_Height_Click"
+                    Content="屏幕宽度" />
+                <RadioButton
+                    x:Name="RadioButton_AimbotFov_All"
+                    Click="RadioButton_AimbotFov_Height_Click"
+                    Content="全部范围" />
+            </WrapPanel>
+            <!--  //////////////  -->
+            <ui:LabelIcon Content="ESP工作模式" />
+            <WrapPanel Margin="5,0,5,0">
+                <RadioButton
+                    x:Name="RadioButton_Overlay_RunMode0"
+                    Click="RadioButton_Overlay_RunMode0_Click"
+                    Content="垂直同步"
+                    IsChecked="True" />
+                <RadioButton
+                    x:Name="RadioButton_Overlay_RunMode1"
+                    Click="RadioButton_Overlay_RunMode0_Click"
+                    Content="300帧" />
+                <RadioButton
+                    x:Name="RadioButton_Overlay_RunMode2"
+                    Click="RadioButton_Overlay_RunMode0_Click"
+                    Content="144帧" />
+                <RadioButton
+                    x:Name="RadioButton_Overlay_RunMode3"
+                    Click="RadioButton_Overlay_RunMode0_Click"
+                    Content="90帧" />
+                <RadioButton
+                    x:Name="RadioButton_Overlay_RunMode4"
+                    Click="RadioButton_Overlay_RunMode0_Click"
+                    Content="60帧" />
+            </WrapPanel>
+            <!--  //////////////  -->
+            <StackPanel
+                Margin="2"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button
+                    x:Name="Button_Overaly_Run"
+                    Click="Button_Overaly_Run_Click"
+                    Content="启动ESP" />
+                <Button
+                    x:Name="Button_Overaly_Exit"
+                    Click="Button_Overaly_Exit_Click"
+                    Content="关闭ESP" />
+            </StackPanel>
+        </StackPanel>
+        <!--  面板3  -->
+        <StackPanel>
+            <ui:LabelIcon Content="使用说明" />
+            <StackPanel Margin="5,0,5,0">
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：# 代表该功能比较影响绘制帧数
+                </TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：部分功能改动后需要重新开启ESP功能
+                </TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：有时候ESP帧数会过低（游戏内帧数波动大，切到游戏外帧数恢复正常），可能需要重启电脑才能恢复，原因尚不清楚
+                </TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：外部绘图会有性能损失，有时候绘制帧数低也是正常现象
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+
+    </UniformGrid>
+
+</UserControl>

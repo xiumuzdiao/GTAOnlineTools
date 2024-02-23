@@ -1,0 +1,139 @@
+﻿<UserControl
+    x:Class="GTA5Menu.Views.ExternalMenu.WorldFunctionView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://crazyzhang.cn/ui/2023/xaml"
+    d:DesignHeight="600"
+    d:DesignWidth="900"
+    DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+    mc:Ignorable="d">
+
+    <UniformGrid Columns="3">
+        <!--  面板1  -->
+        <StackPanel>
+            <ui:LabelIcon Content="本地天气" />
+            <WrapPanel Margin="5,0,5,0">
+                <Button Click="Button_LocalWeather_Click" Content="默认" />
+                <Button Click="Button_LocalWeather_Click" Content="格外晴朗" />
+                <Button Click="Button_LocalWeather_Click" Content="晴朗" />
+                <Button Click="Button_LocalWeather_Click" Content="多云" />
+                <Button Click="Button_LocalWeather_Click" Content="阴霾" />
+                <Button Click="Button_LocalWeather_Click" Content="大雾" />
+                <Button Click="Button_LocalWeather_Click" Content="阴天" />
+                <Button Click="Button_LocalWeather_Click" Content="下雨" />
+                <Button Click="Button_LocalWeather_Click" Content="雷雨" />
+                <Button Click="Button_LocalWeather_Click" Content="雨转晴" />
+                <Button Click="Button_LocalWeather_Click" Content="阴雨" />
+                <Button Click="Button_LocalWeather_Click" Content="下雪" />
+                <Button Click="Button_LocalWeather_Click" Content="暴雪" />
+                <Button Click="Button_LocalWeather_Click" Content="小雪" />
+                <Button Click="Button_LocalWeather_Click" Content="圣诞" />
+                <Button Click="Button_LocalWeather_Click" Content="万圣节" />
+            </WrapPanel>
+
+            <ui:LabelIcon Content="经验倍数" />
+            <StackPanel Margin="5,0,5,0">
+                <ui:SliderIcon
+                    x:Name="Slider_RPxN"
+                    Title="角色RP"
+                    Maximum="1000"
+                    Minimum="1"
+                    Style="{StaticResource SliderIconStyle_Int}"
+                    ValueChanged="Slider_RPxN_ValueChanged" />
+                <ui:SliderIcon
+                    x:Name="Slider_APxN"
+                    Title="竞技场AP"
+                    Maximum="1000"
+                    Minimum="1"
+                    Style="{StaticResource SliderIconStyle_Int}"
+                    ValueChanged="Slider_APxN_ValueChanged" />
+                <ui:SliderIcon
+                    x:Name="Slider_REPxN"
+                    Title="车友会RP"
+                    Maximum="1000"
+                    Minimum="1"
+                    Style="{StaticResource SliderIconStyle_Int}"
+                    ValueChanged="Slider_REPxN_ValueChanged" />
+
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：经验倍数不建议调整的太高，太高容易出现交易过多警告
+                </TextBlock>
+                <TextBlock Style="{StaticResource TextBlockStyle_Hint}">
+                    提示：鼠标拖动或者点击滑块可粗略调整，使用键盘方向键左右可以精确调整
+                </TextBlock>
+            </StackPanel>
+        </StackPanel>
+        <!--  面板2  -->
+        <StackPanel>
+            <ui:LabelIcon Content="NPC控制" />
+            <!--  //////////////  -->
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_KillAllNPC"
+                    Click="Button_KillNPC_Click"
+                    Content="击杀NPC" />
+                <Button
+                    x:Name="Button_KillEnemyNPC"
+                    Click="Button_KillEnemyNPC_Click"
+                    Content="击杀敌对NPC" />
+                <Button
+                    x:Name="Button_KillPolice"
+                    Click="Button_KillPolice_Click"
+                    Content="击杀警察" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <!--  //////////////  -->
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_DestroyVehicles"
+                    Click="Button_DestroyVehicles_Click"
+                    Content="摧毁载具" />
+                <Button
+                    x:Name="Button_DestroyNPCVehicles"
+                    Click="Button_DestroyNPCVehicles_Click"
+                    Content="摧毁NPC载具" />
+                <Button
+                    x:Name="Button_DestroyEnemyNPCVehicles"
+                    Click="Button_DestroyEnemyNPCVehicles_Click"
+                    Content="摧毁敌对NPC载具" />
+                <Button
+                    x:Name="Button_DestroyPoliceVehicles"
+                    Click="Button_DestroyPoliceVehicles_Click"
+                    Content="摧毁警察载具" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <!--  //////////////  -->
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_TeleportNPCToMe"
+                    Click="Button_TeleportNPCToMe_Click"
+                    Content="传送NPC到我" />
+                <Button
+                    x:Name="Button_TeleportEnemyNPCToMe"
+                    Click="Button_TeleportEnemyNPCToMe_Click"
+                    Content="传送敌对NPC到我" />
+            </WrapPanel>
+            <Separator Margin="8,5,8,5" />
+            <!--  //////////////  -->
+            <WrapPanel Margin="5,0,5,0">
+                <Button
+                    x:Name="Button_TeleporNPCTo9999"
+                    Click="Button_TeleporNPCTo9999_Click"
+                    Content="传送NPC到太空" />
+                <Button
+                    x:Name="Button_TeleporEnemyNPCTo9999"
+                    Click="Button_TeleporEnemyNPCTo9999_Click"
+                    Content="传送敌对NPC到太空" />
+                <Button
+                    x:Name="Button_RemoveCCTV"
+                    Click="Button_RemoveCCTV_Click"
+                    Content="移除CCTV摄像头" />
+            </WrapPanel>
+        </StackPanel>
+        <!--  面板3  -->
+        <StackPanel />
+    </UniformGrid>
+
+</UserControl>
