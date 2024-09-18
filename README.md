@@ -2,6 +2,10 @@
 
 一个完全免费的GTA5线上模式小工具
 
+原作地址：https://github.com/CrazyZhang666/GTA5OnlineTools/releases
+
+作者GitHub：https://github.com/CrazyZhang666
+
 ## 下载
 
 [最新版本发布地址](https://github.com/CrazyZhang666/GTA5OnlineTools/releases)  
