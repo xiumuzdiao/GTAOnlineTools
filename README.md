@@ -2,6 +2,8 @@
 
 一个完全免费的GTA5线上模式小工具
 
+警告⚠：由于Rockstargames针对GTA5进行了反作弊系统（BattlEye）更新，原作者已发布消息称不再更新本软件
+
 原作地址：https://github.com/CrazyZhang666/GTA5OnlineTools/releases
 
 作者GitHub：https://github.com/CrazyZhang666
