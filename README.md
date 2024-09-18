@@ -8,7 +8,9 @@
 
 ## 下载
 
-[最新版本发布地址](https://github.com/CrazyZhang666/GTA5OnlineTools/releases)  
+[原作者发布地址](https://github.com/CrazyZhang666/GTA5OnlineTools/releases)  
+
+[备份文件发布地址](https://github.com/xiumuzdiao/GTAOnlineTools/releases)
 
 ## 编译
 
